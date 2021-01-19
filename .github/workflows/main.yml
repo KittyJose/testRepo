@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+
 
 name: post actions
 
@@ -16,7 +16,7 @@ jobs:
   create_commit:
     runs-on: ubuntu-latest
     steps:
-    - name: Create actions test
+    - name: Create github context
       env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
       run: | 
