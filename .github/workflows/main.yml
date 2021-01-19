@@ -3,8 +3,14 @@
 name: post actions
 
 # Controls when the action will run. 
+
 on:
-  - push
+  push:
+  pull_request:
+  fork:
+  issues:
+  watch:
+    types: [started]
 
 jobs:
   create_commit:
