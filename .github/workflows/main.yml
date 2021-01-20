@@ -25,11 +25,6 @@ jobs:
           json: $GITHUB_CONTEXT
           key: ${{ secrets.SuperSecret }}   
           database: "https://hub.terminusdb.com/db/admin/hub-actions"     
-          node-version: '12.x' 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12'
-      - run: npm install
       - run: node index.js
 
       
