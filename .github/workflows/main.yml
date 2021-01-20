@@ -17,9 +17,8 @@ jobs:
     runs-on: windows-latest
     name: example
     steps:
-      - uses: KittyJose/Insights@master
-      - uses: actions/core
-      - uses: actions/github
+      - uses: KittyJose/Insights@master     
+      - uses: actions/setup-node@v1
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
@@ -27,8 +26,8 @@ jobs:
           json: $GITHUB_CONTEXT
           key: ${{ secrets.SuperSecret }}   
           database: "https://hub.terminusdb.com/db/admin/hub-actions"     
-          node-version: '12'  
-      - run: npm install      
+          node-version: '12.x' 
+      - run: npm install  
       - run: npm run start
       
  
