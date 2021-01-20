@@ -24,7 +24,8 @@ jobs:
         with:
           json: $GITHUB_CONTEXT
           key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"         
+          database: "https://hub.terminusdb.com/db/admin/hub-actions"     
+      - run: npm run install      
       - run: npm run start
       
  
