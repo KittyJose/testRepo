@@ -2,7 +2,7 @@
 
 name: post actions
 
-# Controls when the action will run.   sd
+# Controls when the action will run.   
 
 on:
   push:
