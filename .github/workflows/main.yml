@@ -18,6 +18,8 @@ jobs:
     name: example
     steps:
       - uses: KittyJose/Insights@master
+      - uses: '@actions/core'
+      - uses: '@actions/github'
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
