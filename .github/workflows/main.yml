@@ -22,7 +22,7 @@ jobs:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
         with:
-          json: "$GITHUB_CONTEXT"
+          json: ${{ toJSON(github) }}
           key: ${{ secrets.SuperSecret }}   
           database: "https://hub.terminusdb.com/db/admin/hub-actions"     
 
