@@ -30,7 +30,7 @@ jobs:
     needs: one
     steps:     
       - name: print first job output      
-        run: npm install
+        run: npm run start
 
 
          
