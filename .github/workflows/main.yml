@@ -27,8 +27,9 @@ jobs:
           key: ${{ secrets.SuperSecret }}   
           database: "https://hub.terminusdb.com/db/admin/hub-actions"     
           node-version: '12.x' 
-      - run: npm install  
-      - run: node index.js
+      - run: | 
+          npm install 
+          node index.js 
 
       
  
