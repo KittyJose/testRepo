@@ -24,6 +24,7 @@ jobs:
         with:               
           json: $GITHUB_CONTEXT
           key: ${{ secrets.SuperSecret }}   
+          database: "https://hub.terminusdb.com/db/admin/hub-actions"
           node-version: '12.x'
   two:
     runs-on: ubuntu-latest
