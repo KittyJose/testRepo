@@ -13,30 +13,22 @@ on:
     types: [started]
 
 jobs:
-  one:
-    runs-on: ubuntu-latest    
+  build:
+    runs-on: windows-latest
+    name: example
     steps:
-      - name: set up envs and context
-        uses: KittyJose/Insights@master
+      - uses: KittyJose/Insights@master
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
-        with:               
+        with:
           json: $GITHUB_CONTEXT
           key: ${{ secrets.SuperSecret }}   
           database: "https://hub.terminusdb.com/db/admin/hub-actions"
           node-version: '12.x'
-  two:
-    runs-on: ubuntu-latest
-    needs: one
-    steps:     
-      - name: print first job output      
-        run: npm run start
-
-
-         
-
-
+      - run: npm run start
+      
+ 
 
 
 
