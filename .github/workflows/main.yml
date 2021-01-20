@@ -1,6 +1,6 @@
 
 
-name: post actions
+name: record github actions in this repo
 
 # Controls when the action will run.   
 
@@ -25,7 +25,7 @@ jobs:
           json: $GITHUB_CONTEXT
           key: ${{ secrets.SuperSecret }}   
           database: "https://hub.terminusdb.com/db/admin/hub-actions"     
-      - run: node index.js
+
 
       
  
