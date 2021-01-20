@@ -17,21 +17,20 @@ jobs:
     runs-on: ubuntu-latest    
     steps:
       - name: set up envs and context
-      - uses: KittyJose/Insights@master
-      - env:
+        uses: KittyJose/Insights@master
+        env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
-      - with:               
+        with:               
           json: $GITHUB_CONTEXT
-          key: ${{ secrets.SuperSecret }}      
+          key: ${{ secrets.SuperSecret }}   
+          node-version: '12.x'
   two:
     runs-on: ubuntu-latest
     needs: one
-    steps:
-      - name: print first job output
-      - with:
-          node-version: '12.x'
-      - run: npm install
+    steps:     
+      - name: print first job output      
+        run: npm install
 
 
          
