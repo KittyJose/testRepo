@@ -16,7 +16,7 @@ jobs:
   create_commit:
     runs-on: ubuntu-latest
     steps:
-    - name: Create github context
+    - name: Create github context with secret
       env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
