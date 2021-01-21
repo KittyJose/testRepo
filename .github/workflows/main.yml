@@ -31,7 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm install      
       - name: printing vars
-        run: echo ${{ toJSON(github) }} ${{ secrets.SuperSecret }}
+        run: |
+          echo ${{ toJSON(github) }} 
       - name: Test   
         run: |
          ls
