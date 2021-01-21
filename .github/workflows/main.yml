@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - uses: KittyJose/Insights/action.yml@v1.0.0
+    - uses: KittyJose/Insights/action.yml
       with:
         # public version of https://github.com/actions/hello-world-docker-action
         repository: KittyJose/Insights@master                  
