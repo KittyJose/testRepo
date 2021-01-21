@@ -11,20 +11,26 @@ on:
   issues:
   watch:
     types: [started]
-
+    
 jobs:
   build:
-    runs-on: windows-latest
-    name: example
+    runs-on: [ubuntu-latest, windows-latest]
     steps:
-      - uses: KittyJose/Insights@master          
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-          super_secret: ${{ secrets.SuperSecret }}  
-        with:
+    - uses: action.yml
+      with:
+        # public version of https://github.com/actions/hello-world-docker-action
+        repository: KittyJose/Insights@master                  
+    - name: Run the public action
+      uses: ./
+      with:
           json: ${{ toJSON(github) }}
           key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"     
+          database: "https://hub.terminusdb.com/db/admin/hub-actions" 
+    - run: npm install
+    - run: node index.js
+        
+
+ 
 
 
       
