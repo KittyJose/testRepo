@@ -15,20 +15,12 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    steps:
+    steps:    
+    - name: Install Dependencies
+      run: npm install
+    - name: using repo 
     - uses: KittyJose/Insights@v1
-    - run: |
-          npm install
-          npm run build                 
-    - name: Run the public action
-      uses: ./
-      with:
-          json: ${{ toJSON(github) }}
-          key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions" 
-    - run: npm install
-    - run: node index.js
-    
+
 
  
 
