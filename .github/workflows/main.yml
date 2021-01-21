@@ -20,15 +20,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: KittyJose/Insights
-          ref: 'master'        
-      - name: Create .env file
-        run: |
-          touch KittyJose/Insights/env
-          echo KEY=${{ secrets.SuperSecret }} JSON=${{ toJSON(github) }} DATABASE="https://hub.terminusdb.com/db/admin/hub-actions">> .env:        
+          ref: 'master'                
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+          json: ${{ toJSON(github) }}
+          key: ${{ secrets.SuperSecret }}   
+          database: "https://hub.terminusdb.com/db/admin/hub-actions"     
       - name: Install dependencies
         run: npm install      
       - name: Get Inputs  
