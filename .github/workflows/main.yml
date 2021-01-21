@@ -11,15 +11,17 @@ on:
   issues:
   watch:
     types: [started]
-    
+
 jobs:
   build:
-    runs-on: windows-latest
-    steps:    
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: KittyJose/Insights@v1
+
     - name: Install Dependencies
       run: npm install
-    - name: using repo 
-    - uses: KittyJose/Insights@v1
+
 
 
  
