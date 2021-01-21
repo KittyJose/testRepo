@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: KittyJose/Insights@v1.0
+        repository: KittyJose/Insights
         ref: 'master'  
 
     
