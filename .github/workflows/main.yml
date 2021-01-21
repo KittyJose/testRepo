@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm install      
       - name: Get Inputs 
-        uses: actions/KittyJose/Insights@v1.0
+        uses: actions/Insights@v1.0
         with: 
           json: ${{ toJSON(github) }}
           key: ${{ secrets.SuperSecret }}   
