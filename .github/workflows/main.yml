@@ -17,9 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install Dependencies
-      run: npm install
-    - uses: KittyJose/Insights@v1
+    - uses: KittyJose/Insights@v1.0
 
     
 
