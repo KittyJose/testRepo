@@ -20,14 +20,19 @@ jobs:
     - uses: actions/checkout@v2
       with:
         repository: KittyJose/Insights
-        ref: 'master'  
-        json: ${{ toJSON(github) }}
-        key: ${{ secrets.SuperSecret }}   
-        database: "https://hub.terminusdb.com/db/admin/hub-actions" 
+        ref: 'master'                   
     - uses: actions/setup-node@v2
       with:
-        node-version: '12'
+        node-version: '12'          
     - run: npm install
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ tojson(github) }}
+        SECRET: ${{ secrets.SuperSecret }} 
+      with:  
+        json: ${{ toJSON(github) }}
+        key: ${{ secrets.SuperSecret }}   
+        database: "https://hub.terminusdb.com/db/admin/hub-actions"  
     - run: node index.js
 
     
