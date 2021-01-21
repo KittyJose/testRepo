@@ -42,19 +42,8 @@ jobs:
          ls
       - name: getting action
         run: | 
-          node index.js
-      - name: bull
-        uses: actions/checkout@v2
-        with:          
-          repository: KittyJose/Insights
-          ref: 'master'   
-          json: ${{ toJSON(github) }}
-          key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"
-      - name: TestAgain   
-        run: |
-         ls
-                       
+          node index.js --database=$database
+      
       
             
       
