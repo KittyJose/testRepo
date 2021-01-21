@@ -39,7 +39,7 @@ jobs:
          ls
       - name: getting action
         run: | 
-          node index.js
+          node index.js $database
                        
       
             
