@@ -20,7 +20,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: KittyJose/Insights
-          ref: 'master'                        
+          ref: 'master'    
+      - name : Test   
+        run: |
+          cd testRepo
+                       
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
