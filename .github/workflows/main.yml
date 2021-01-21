@@ -15,35 +15,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-      with:
-        repository: KittyJose/Insights
-        ref: 'master'                   
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '12'          
-    - run: npm install
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ tojson(github) }}
-        SECRET: ${{ secrets.SuperSecret }} 
-      with:  
-        json: ${{ toJSON(github) }}
-        key: ${{ secrets.SuperSecret }}   
-        database: "https://hub.terminusdb.com/db/admin/hub-actions"  
-    - run: node index.js
-
-    
-
-
-
- 
-
-
-      
- 
-
-
-
+      - uses: actions/checkout@v2
+        with:
+          repository: KittyJose/Insights
+          ref: 'master'   
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install dependencies
+      - run: npm install 
+      - name: Get Inputs
+        env:
+          GITHUB_CONTEXT: ${{ tojson(github) }}
+          SECRET: ${{ secrets.SuperSecret }} 
+        with:  
+          json: ${{ toJSON(github) }}
+          key: ${{ secrets.SuperSecret }}   
+          database: "https://hub.terminusdb.com/db/admin/hub-actions"  
+      - run: node index.js
+   
