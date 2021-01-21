@@ -24,9 +24,7 @@ jobs:
           ref: 'master'   
           json: ${{ toJSON(github) }}
           key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"   
-      - name: Use local my-action
-        uses: .test/KittyJose/Insights/action
+          database: "https://hub.terminusdb.com/db/admin/hub-actions"         
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
