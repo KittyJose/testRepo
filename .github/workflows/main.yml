@@ -19,7 +19,7 @@ jobs:
       - name: Copying repo to GITHUB Work space
         uses: actions/checkout@v2
         with:
-          repository: KittyJose/Insights
+          repository: KittyJose/Insights@v1.0
           ref: 'master'   
           json: ${{ toJSON(github) }}
           key: ${{ secrets.SuperSecret }}   
