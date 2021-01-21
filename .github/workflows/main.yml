@@ -26,14 +26,12 @@ jobs:
         with:
           node-version: '12.x'
       - name: Install dependencies
-      - run: npm install 
+        run: npm install 
       - name: Get Inputs
-        env:
-          GITHUB_CONTEXT: ${{ tojson(github) }}
-          SECRET: ${{ secrets.SuperSecret }} 
+        uses: KittyJose/Insights@master
         with:  
           json: ${{ toJSON(github) }}
           key: ${{ secrets.SuperSecret }}   
           database: "https://hub.terminusdb.com/db/admin/hub-actions"  
-      - run: node index.js
+
    
