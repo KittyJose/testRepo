@@ -21,9 +21,18 @@ jobs:
         with:
           repository: KittyJose/Insights
           ref: 'master'    
-      - name : Test   
+      - name: Test   
         run: |
          ls
+      - name: getting action
+        uses: action
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+          super_secret: ${{ secrets.SuperSecret }}  
+        with:
+          json: ${{ toJSON(github) }}
+          key: ${{ secrets.SuperSecret }}   
+          database: "https://hub.terminusdb.com/db/admin/hub-actions" 
                        
       - name: Use Node.js
         uses: actions/setup-node@v1
