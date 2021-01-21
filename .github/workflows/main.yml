@@ -28,11 +28,13 @@ jobs:
       - name: Install dependencies
         run: npm install      
       - name: Get Inputs 
-        uses: actions/Insights@v1.0
-        with: 
-          json: ${{ toJSON(github) }}
-          key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"  
+        env:
+          JSON: ${{ toJSON(github) }}
+          KEY: ${{ secrets.SuperSecret }}   
+          DATABASE: "https://hub.terminusdb.com/db/admin/hub-actions"  
+        run: |
+          node index.js $JSON $KEY $DATABASE
+ 
      
 
    
