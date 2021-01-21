@@ -41,10 +41,17 @@ jobs:
         run: |
          ls
       - name: getting action
-        with:   
+        run: | 
+          node index.js
+      - name: bull
+        uses: actions/checkout@v2
+        with:          
           json: ${{ toJSON(github) }}
-        uses: | 
-          node index.js 
+          key: ${{ secrets.SuperSecret }}   
+          database: "https://hub.terminusdb.com/db/admin/hub-actions"
+      - name: TestAgain   
+        run: |
+         ls
                        
       
             
