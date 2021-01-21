@@ -23,7 +23,7 @@ jobs:
           ref: 'master'    
       - name : Test   
         run: |
-          cd testRepo
+         ls
                        
       - name: Use Node.js
         uses: actions/setup-node@v1
