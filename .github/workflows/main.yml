@@ -17,9 +17,9 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: KittyJose/Insights@v1
-      with:
-        # public version of https://github.com/actions/hello-world-docker-action
-        repository: KittyJose/Insights@master                  
+    - run: |
+          npm install
+          npm run build                 
     - name: Run the public action
       uses: ./
       with:
@@ -28,7 +28,7 @@ jobs:
           database: "https://hub.terminusdb.com/db/admin/hub-actions" 
     - run: npm install
     - run: node index.js
-        
+    
 
  
 
