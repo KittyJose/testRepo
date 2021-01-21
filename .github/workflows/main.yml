@@ -20,12 +20,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: KittyJose/Insights@v1.0
+          path: 'test'  
           ref: 'master'   
           json: ${{ toJSON(github) }}
           key: ${{ secrets.SuperSecret }}   
           database: "https://hub.terminusdb.com/db/admin/hub-actions"   
       - name: Use local my-action
-        uses: KittyJose/Insights/action
+        uses: .test/KittyJose/Insights/action
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
