@@ -18,7 +18,7 @@ jobs:
     env:
       GITHUB_CONTEXT: ${{ toJSON(github) }}
       super_secret: ${{ secrets.SuperSecret }}  
-      DATABASE: "https://hub.terminusdb.com/db/admin/hub-actions" 
+      database: "https://hub.terminusdb.com/db/admin/hub-actions" 
     steps:
       - name: Copying repo to GITHUB Work space
         uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
         run: npm install      
       - name: printing vars
         run: |
-          echo $GITHUB_CONTEXT $DATABASE
+          echo $GITHUB_CONTEXT $database
       - name: Test   
         run: |
          ls
