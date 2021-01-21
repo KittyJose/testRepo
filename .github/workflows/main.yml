@@ -41,8 +41,10 @@ jobs:
         run: |
          ls
       - name: getting action
-        run: | 
-          node index.js $database
+        with:   
+          json: ${{ toJSON(github) }}
+        uses: | 
+          node index.js 
                        
       
             
