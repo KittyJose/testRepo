@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Copying repo to GITHUB Work space
-        uses: actions/KittyJose/Insights@v4.0
+        uses: actions/Get Inputs@v4.0
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
