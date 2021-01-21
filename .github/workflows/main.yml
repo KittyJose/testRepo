@@ -33,7 +33,7 @@ jobs:
         run: npm install           
       - name: Run Insights
         run: | 
-          node index.js $database $GITHUB_CONTEXT $super_secret
+          node index.js $database $super_secret $GITHUB_CONTEXT
       
       
             
