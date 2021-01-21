@@ -17,27 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Copying repo to GITHUB Work space
-        uses: actions/checkout@v2
-        with:
-          repository: KittyJose/Insights
-          path: 'test'  
-          ref: 'master'                
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'          
-      - name: Install dependencies
-        run: npm install      
-      - name: call Repo
-        uses: KittyJose/Insights@master          
+        uses: actions/KittyJose/Insights@v4.0
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
           super_secret: ${{ secrets.SuperSecret }}  
         with:
           json: ${{ toJSON(github) }}
           key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"
- 
-     
-
-   
+          database: "https://hub.terminusdb.com/db/admin/hub-actions"           
+      
