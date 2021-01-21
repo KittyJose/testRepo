@@ -19,12 +19,9 @@ jobs:
       - name: Copying repo to GITHUB Work space
         uses: actions/checkout@v2
         with:
-          repository: KittyJose/Insights@v1.0
+          repository: KittyJose/Insights
           path: 'test'  
-          ref: 'master'   
-          json: ${{ toJSON(github) }}
-          key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"         
+          ref: 'master'                
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
