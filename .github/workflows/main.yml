@@ -21,6 +21,9 @@ jobs:
       with:
         repository: KittyJose/Insights
         ref: 'master'  
+        json: ${{ toJSON(github) }}
+        key: ${{ secrets.SuperSecret }}   
+        database: "https://hub.terminusdb.com/db/admin/hub-actions" 
     - uses: actions/setup-node@v2
       with:
         node-version: '12'
