@@ -20,27 +20,18 @@ jobs:
       super_secret: ${{ secrets.SuperSecret }}  
       database: "https://hub.terminusdb.com/db/admin/hub-actions" 
     steps:
-      - name: Copying repo to GITHUB Work space
+      - name: Checkout Repo
         uses: actions/checkout@v2
         with:
           repository: KittyJose/Insights
-          ref: 'master'      
-          json: ${{ toJSON(github) }}
-          key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"   
+          ref: 'master'               
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
       - name: Install dependencies
-        run: npm install      
-      - name: printing vars
-        run: |
-          echo $GITHUB_CONTEXT $database
-      - name: Test   
-        run: |
-         ls
-      - name: getting action
+        run: npm install           
+      - name: Run Insights
         run: | 
           node index.js --database=$database --json=$GITHUB_CONTEXT --key=$super_secret
       
