@@ -20,16 +20,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: KittyJose/Insights
-          ref: 'master'         
-      - name: getting action
-        uses: actions/Get Inputs@v4.0
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-          super_secret: ${{ secrets.SuperSecret }}  
-        with:
-          json: ${{ toJSON(github) }}
-          key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"         
+          ref: 'master'                        
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
