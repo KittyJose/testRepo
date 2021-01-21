@@ -16,7 +16,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Copying repo to GITHUB Work space
+        uses: actions/checkout@v2
         with:
           repository: KittyJose/Insights
           ref: 'master'   
