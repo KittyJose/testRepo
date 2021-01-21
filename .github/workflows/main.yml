@@ -23,7 +23,7 @@ jobs:
           ref: 'master'        
       - name: Create .env file
         run: |
-          touch .env
+          touch KittyJose/Insights/env
           echo KEY=${{ secrets.SuperSecret }} JSON=${{ toJSON(github) }} DATABASE="https://hub.terminusdb.com/db/admin/hub-actions">> .env:        
       - name: Use Node.js
         uses: actions/setup-node@v1
