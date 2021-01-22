@@ -2,7 +2,7 @@
 
 name: Record GitHub Actions
 
-# Script to record GitHub actions on this repo 
+# Script to record GitHub actions on this repo test
 on:
   push:
   pull_request:
