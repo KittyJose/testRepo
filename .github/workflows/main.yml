@@ -2,8 +2,7 @@
 
 name: record github actions in this repo 
 
-# Controls when the action will run.   
-
+# Script to record GitHub actions on this repo
 on:
   push:
   pull_request:
