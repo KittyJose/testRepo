@@ -24,9 +24,6 @@ jobs:
         with:
           repository: KittyJose/Insights
           ref: 'master'       
-          json: ${{ toJSON(github) }}
-          key: ${{ secrets.SuperSecret }}   
-          database: "https://hub.terminusdb.com/db/admin/hub-actions"       
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -34,9 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm install     
       - name: Install Client
-        run: npm install --save @terminusdb/terminusdb-client    
-      - name: Install GitHub toolkits
-        run: npm install --save @actions/core         
+        run: npm install --save @terminusdb/terminusdb-client           
+      - name: Run Insights
+        run: | 
+           node index.js url:$database key:$super_secret json:"$GITHUB_CONTEXT" 
+      
      
       
             
