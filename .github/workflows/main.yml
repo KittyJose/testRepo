@@ -1,6 +1,6 @@
 
 
-name: record github actions in this repo test
+name: Record GitHub Actions
 
 # Script to record GitHub actions on this repo 
 on:
