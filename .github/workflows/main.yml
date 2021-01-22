@@ -34,7 +34,7 @@ jobs:
         run: npm install --save @terminusdb/terminusdb-client           
       - name: Run Insights
         run: | 
-           node index.js url:$database key:$super_secret json:"$GITHUB_CONTEXT"
+           node index.js url:$database key:$super_secret json:"$GITHUB_CONTEXT" --unhandled-rejections=strict
       
       
             
